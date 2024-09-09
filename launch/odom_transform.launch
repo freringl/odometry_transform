@@ -1,0 +1,12 @@
+<launch>
+  <arg name="target_frame"      default="odom" />
+  <arg name="output_child_frame"      default="base_link" />
+  <arg name="input_topic"      default="/input_odom" />
+  <arg name="output_topic"      default="/output_odom" />
+  <node name="odom_transform_node" pkg="tug_odometry_transform" type="odom_transform_node.py" output="screen">
+    <param name="target_frame" value="$(arg target_frame)" />
+    <param name="output_child_frame" value="$(arg output_child_frame)" />
+    <param name="input_topic" value="$(arg input_topic)" />
+    <param name="output_topic" value="$(arg output_topic)" />
+  </node>
+</launch>
